@@ -3,7 +3,7 @@
 int* newArray(int* A, int* B, int n)// задача 1
 {
 	int* S = new int[n];
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i != n; i++)
 	{
 		*(S + i) = *(A + i) + *(B + i);
 	}
@@ -28,7 +28,7 @@ void lessNumber(int* arr1, int* arr2, int n, int number)// задача 2
 	arr2 = fillArray(arr2, n);
 	int res1 = 0;
 	int res2 = 0;
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i != n; i++)
 	{
 		if (*(arr1 + i) < number)
 		{
@@ -56,9 +56,33 @@ void fiborachi(int* array, int size)// задача 3
 	}
 }
 
+int greaterEl(int* array, int size)
+{
+	int greaterEl = array[0];
+	for (int i = 1; i != size; i++)
+	{
+		if (greaterEl < array[i]) 
+		{
+			greaterEl = array[i];
+		}
+	}
+	return greaterEl;
+}
+
+bool contain(int* array, int* array1, int n, int m)
+{
+	int greater = greaterEl(array, n);
+	for (int i = 0; i < m; i++)
+	{
+		if (array1[i] == greater)
+			return 1;
+	}
+	return 0;
+}
 
 int main()
 {
+	//задача 1
 	/*int arr1_1[4] = { 1,2,3,4 };
 	int arr2_1[4] = { 1,2,3,4 };
 	int* res = newArray(arr1_1, arr2_1, 4);
@@ -67,12 +91,17 @@ int main()
 		std::cout << res[i] << std::endl;
 	}*/
 
-	int arr1_2[5] = {};
+	//задача 2
+	/*int arr1_2[5] = {};
 	int arr2_2[5] = {};
-	lessNumber(arr1_2, arr2_2, 5, 40);
+	lessNumber(arr1_2, arr2_2, 5, 40);*/
 
-	/*int array[5] = {};
+	//задача 3
+	/*int arr1_3[5] = {};
 	fiborachi(array, 5);*/
 
-	
+	//задача 4
+	int arr1_4[5] = { 1, 2, 3, 4, 5 };
+	int arr2_4[8] = { 1, 2, 3, 4, 3, 2, 2, 2 };
+	std::cout << contain(arr1_4, arr2_4, 5, 8) << std::endl;
 }
