@@ -69,7 +69,7 @@ int greaterEl(int* array, int size)
 	return greaterEl;
 }
 
-bool contain(int* array, int* array1, int n, int m)
+bool contain(int* array, int* array1, int n, int m)// задача 4
 {
 	int greater = greaterEl(array, n);
 	for (int i = 0; i < m; i++)
