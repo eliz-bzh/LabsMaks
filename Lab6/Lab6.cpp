@@ -1,5 +1,9 @@
 ﻿#include <iostream>
 
+//Даны массивы A и B, состоящие из n элементов.
+//Построить массив S, каждый элемент которого равен 
+//сумме соответствующих элементов массивов A и B.
+
 int* newArray(int* A, int* B, int n)// задача 1
 {
 	int* S = new int[n];
@@ -9,6 +13,11 @@ int* newArray(int* A, int* B, int n)// задача 1
 	}
 	return S;
 }
+
+//Заданы два массива А(n) и В(n).
+//Значения элементов сформировать случайным образом в диапазоне 0 - 50. 
+//Подсчитать в каждом из них количество элементов, меньших значения Х(ввести с клавиатуры).
+//Результаты вывести на экран – сформированные массивы и количество элементов.
 
 int* fillArray(int* array, int size)
 {
@@ -43,6 +52,10 @@ void lessNumber(int* arr1, int* arr2, int n, int number)// задача 2
 	std::cout << "Amount of elements of the second array " << res2 << std::endl;
 }
 
+
+//Сформировать элементы массива по следующему правилу х[0] = 0, x[1] = 1, 
+//x[2] = x[0] + x[1], …..x[n] = x[n - 1] + x[n - 2].
+
 void fiborachi(int* array, int size)// задача 3
 {
 	array[0] = 0;
@@ -55,6 +68,9 @@ void fiborachi(int* array, int size)// задача 3
 		std::cout << *(array + i) << " ";
 	}
 }
+
+//Дан массив A из n элементов и B из m элементов.
+//Содержится ли наибольший элемент массива A в массиве B ?
 
 int greaterEl(int* array, int size)
 {
