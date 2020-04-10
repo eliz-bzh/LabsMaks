@@ -77,9 +77,9 @@ int greaterEl(int* array, int size)
 	int greaterEl = array[0];
 	for (int i = 1; i != size; i++)
 	{
-		if (greaterEl < array[i]) 
+		if (greaterEl < *(array + i))
 		{
-			greaterEl = array[i];
+			greaterEl = *(array + i);
 		}
 	}
 	return greaterEl;
@@ -90,7 +90,7 @@ bool contain(int* array, int* array1, int n, int m)// задача 4
 	int greater = greaterEl(array, n);
 	for (int i = 0; i < m; i++)
 	{
-		if (array1[i] == greater)
+		if (*(array1 + i) == greater)
 			return 1;
 	}
 	return 0;
